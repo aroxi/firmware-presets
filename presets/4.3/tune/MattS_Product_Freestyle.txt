@@ -1,0 +1,68 @@
+#$ TITLE: MattS ProDuct DDI Freestyle
+#$ FIRMWARE_VERSION: 4.3
+#$ CATEGORY: TUNE
+#$ STATUS: OFFICIAL
+#$ KEYWORDS: MattS
+#$ AUTHOR: MattS
+#$ DESCRIPTION: MattS Freestyle Preset for DDI ProDuct
+#$ DESCRIPTION:
+#$ DESCRIPTION: Enjoy!
+#$ DISCUSSION: https://github.com/betaflight/firmware-presets/pull/124
+#$ INCLUDE_WARNING: misc/warnings/en/rpm_filters.txt
+#$ INCLUDE: presets/4.3/tune/defaults.txt
+#$ INCLUDE: presets/4.3/filters/defaults.txt
+
+
+
+
+#$ OPTION BEGIN (CHECKED): Freestyle
+
+set gyro_lpf1_static_hz = 337
+set gyro_lpf2_static_hz = 675
+set dyn_notch_count = 2
+set dyn_notch_min_hz = 100
+set dyn_notch_max_hz = 1000
+set gyro_lpf1_dyn_min_hz = 337
+set gyro_lpf1_dyn_max_hz = 675
+set mag_hardware = NONE
+set rc_smoothing_auto_factor = 250
+set rc_smoothing_setpoint_cutoff = 25
+set rc_smoothing_feedforward_cutoff = 25
+set dshot_bidir = ON
+set yaw_motors_reversed = ON
+set small_angle = 180
+set simplified_gyro_filter_multiplier = 135
+set gyro_1_align_yaw = 1800
+set rpm_filter_harmonics = 2
+
+set dterm_lpf1_dyn_min_hz = 105
+set dterm_lpf1_dyn_max_hz = 210
+set dterm_lpf1_static_hz = 105
+set dterm_lpf2_static_hz = 210
+set anti_gravity_gain = 10000
+set iterm_relax_cutoff = 10
+set p_pitch = 70
+set i_pitch = 126
+set d_pitch = 66
+set f_pitch = 243
+set p_roll = 67
+set i_roll = 120
+set d_roll = 58
+set f_roll = 233
+set p_yaw = 67
+set i_yaw = 120
+set f_yaw = 233
+set d_min_roll = 58
+set d_min_pitch = 66
+set thrust_linear = 20
+set feedforward_averaging = 2_POINT
+set feedforward_smooth_factor = 65
+set dyn_idle_min_rpm = 40
+set simplified_master_multiplier = 150
+set simplified_d_gain = 130
+set simplified_dmax_gain = 0
+set simplified_feedforward_gain = 130
+set simplified_dterm_filter_multiplier = 140
+simplified_tuning apply
+
+#$ OPTION END
