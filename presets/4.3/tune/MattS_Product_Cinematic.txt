@@ -12,105 +12,66 @@
 #$ INCLUDE: presets/4.3/tune/defaults.txt
 #$ INCLUDE: presets/4.3/filters/defaults.txt
 
-# -- Non-RPM Filtering --
 
-set dshot_bidir = OFF
-set simplified_gyro_filter = OFF
-set gyro_lpf2_static_hz = 1000
-set gyro_lpf1_dyn_min_hz = 300
-set gyro_lpf1_dyn_max_hz = 600
-set dyn_notch_count = 3
-set dyn_notch_q = 300
-set dyn_notch_min_hz = 100
-set dyn_notch_max_hz = 800
 
-# -- Dterm filtering --
+#$ OPTION BEGIN (CHECKED): Cinematic
 
-set simplified_dterm_filter = OFF
-set dterm_lpf1_dyn_min_hz = 0
-set dterm_lpf1_dyn_max_hz = 0
-set dterm_lpf1_dyn_expo = 0
-set dterm_lpf1_static_hz = 80
-set dterm_lpf2_static_hz = 140
 
-# -- Antigravity --
-
-set anti_gravity_gain = 4000
-
-#$ OPTION BEGIN (CHECKED): RPM filtering
-
-set motor_pwm_protocol = DSHOT600
-set dshot_bidir = ON
-set simplified_gyro_filter = OFF
-set rpm_filter_harmonics = 1
-set gyro_lpf2_static_hz = 1000
-set gyro_lpf1_dyn_min_hz = 300
-set gyro_lpf1_dyn_max_hz = 600
-set gyro_lpf1_dyn_expo = 8
+# master
+set gyro_lpf1_static_hz = 300
+set gyro_lpf2_static_hz = 600
 set dyn_notch_count = 2
-set dyn_notch_q = 400
 set dyn_notch_min_hz = 100
-set dyn_notch_max_hz = 800
+set dyn_notch_max_hz = 1000
+set gyro_lpf1_dyn_min_hz = 300
+set gyro_lpf1_dyn_max_hz = 600
+set acc_calibration = 55,10,-8,1
+set mag_hardware = NONE
+set rssi_channel = 15
+set rc_smoothing_auto_factor = 250
+set rc_smoothing_setpoint_cutoff = 25
+set rc_smoothing_feedforward_cutoff = 25
+set serialrx_provider = CRSF
+set dshot_bidir = ON
+set yaw_motors_reversed = ON
+set small_angle = 180
+set simplified_gyro_filter_multiplier = 120
+set osd_rssi_pos = 2345
+set osd_warnings_pos = 329
+set gyro_1_align_yaw = 1800
+set rpm_filter_harmonics = 2
 
-#$ OPTION END
+profile 0
 
-#$ OPTION BEGIN (CHECKED): 4s Lipo with HD Cam (2400-2700kv motors)
-
-# -- Sliders --
-
-set simplified_master_multiplier = 120
-set simplified_i_gain = 75
-set simplified_d_gain = 110
-set simplified_pi_gain = 110
+# profile 0
+set dterm_lpf1_dyn_min_hz = 97
+set dterm_lpf1_dyn_max_hz = 195
+set dterm_lpf1_static_hz = 97
+set dterm_lpf2_static_hz = 195
+set anti_gravity_gain = 10000
+set iterm_relax_cutoff = 4
+set p_pitch = 65
+set i_pitch = 117
+set d_pitch = 57
+set f_pitch = 227
+set p_roll = 63
+set i_roll = 112
+set d_roll = 50
+set f_roll = 218
+set p_yaw = 63
+set i_yaw = 112
+set f_yaw = 218
+set d_min_roll = 50
+set d_min_pitch = 57
+set thrust_linear = 20
+set feedforward_averaging = 2_POINT
+set feedforward_smooth_factor = 65
+set dyn_idle_min_rpm = 40
+set simplified_master_multiplier = 140
+set simplified_d_gain = 120
 set simplified_dmax_gain = 0
-set simplified_feedforward_gain = 90
-set simplified_pitch_d_gain = 95
-set simplified_pitch_pi_gain = 115
-simplified_tuning apply
-
-#$ OPTION END
-
-#$ OPTION BEGIN (UNCHECKED): 4s Lipo with No HD Cam (2400-2700kv motors)
-
-# -- Sliders --
-
-set simplified_master_multiplier = 120
-set simplified_i_gain = 75
-set simplified_d_gain = 110
-set simplified_pi_gain = 110
-set simplified_dmax_gain = 0
-set simplified_feedforward_gain = 90
-set simplified_pitch_d_gain = 90
-simplified_tuning apply
-
-#$ OPTION END
-
-#$ OPTION BEGIN (UNCHECKED): 6s Lipo with HD Cam (1750 - 1950kv motors)
-
-# -- Sliders --
-
-set simplified_master_multiplier = 100
-set simplified_i_gain = 75
-set simplified_d_gain = 110
-set simplified_pi_gain = 115
-set simplified_dmax_gain = 0
-set simplified_feedforward_gain = 90
-set simplified_pitch_pi_gain = 110
-simplified_tuning apply
-
-#$ OPTION END
-
-#$ OPTION BEGIN (UNCHECKED): 6s Lipo with No HD Cam (1750 - 1950kv motors)
-
-# -- Sliders --
-
-set simplified_master_multiplier = 100
-set simplified_i_gain = 75
-set simplified_d_gain = 110
-set simplified_pi_gain = 115
-set simplified_dmax_gain = 0
-set simplified_feedforward_gain = 90
-set simplified_pitch_d_gain = 95
+set simplified_feedforward_gain = 130
+set simplified_dterm_filter_multiplier = 130
 simplified_tuning apply
 
 #$ OPTION END
